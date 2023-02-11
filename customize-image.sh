@@ -36,9 +36,10 @@ Main() {
 			# your code here
 			;;
 	esac
-	cp /tmp/overlay/etc_apt_keyrings/* /etc/apt/keyrings/
-	cp /tmp/overlay/etc_apt_sourcelist.d/* /etc/apt/keyrings/
-	apt-get update && apt-get install -y code tabby-terminal
+	install -D -o root -g root -m 644 /tmp/overlay/etc_apt_keyrings/* /etc/apt/keyrings/
+	install -D -o root -g root -m 644 /tmp/overlay/etc_apt_source.list.d/* /etc/apt/sources.list.d/
+	apt-get upgrade -y
+	apt-get update && apt-get install -y code tabby-terminal kodi
 } # Main
 
 InstallOpenMediaVault() {

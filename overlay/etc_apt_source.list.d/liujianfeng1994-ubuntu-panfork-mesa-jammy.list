@@ -1,0 +1,2 @@
+deb [arch=arm64 signed-by=/etc/apt/keyrings/liujianfeng1994-ubuntu-panfork-mesa.gpg] https://ppa.launchpadcontent.net/liujianfeng1994/panfork-mesa/ubuntu/ jammy main
+# deb-src https://ppa.launchpadcontent.net/liujianfeng1994/panfork-mesa/ubuntu/ jammy main
