@@ -36,6 +36,9 @@ Main() {
 			# your code here
 			;;
 	esac
+	cp /tmp/overlay/etc_apt_keyrings/* /etc/apt/keyrings/
+	cp /tmp/overlay/etc_apt_sourcelist.d/* /etc/apt/keyrings/
+	apt-get update && apt-get install -y code tabby-terminal
 } # Main
 
 InstallOpenMediaVault() {
@@ -43,7 +46,7 @@ InstallOpenMediaVault() {
 	# image (OMV 3 on Jessie, OMV 4 with Stretch). Use of mainline kernel highly
 	# recommended!
 	#
-	# Please note that this variant changes Armbian default security 
+	# Please note that this variant changes Armbian default security
 	# policies since you end up with root password 'openmediavault' which
 	# you have to change yourself later. SSH login as root has to be enabled
 	# through OMV web UI first
@@ -75,7 +78,7 @@ InstallOpenMediaVault() {
 	deb https://openmediavault.github.io/packages/ ${OMV_Name} main
 	## Uncomment the following line to add software from the proposed repository.
 	deb https://openmediavault.github.io/packages/ ${OMV_Name}-proposed main
-	
+
 	## This software is not part of OpenMediaVault, but is offered by third-party
 	## developers as a service to OpenMediaVault users.
 	# deb https://openmediavault.github.io/packages/ ${OMV_Name} partner
@@ -112,7 +115,7 @@ InstallOpenMediaVault() {
 	# install OMV extras, enable folder2ram and tweak some settings
 	FILE=$(mktemp)
 	wget "$OMV_EXTRAS_URL" -qO $FILE && dpkg -i $FILE
-	
+
 	/usr/sbin/omv-update
 	# Install flashmemory plugin and netatalk by default, use nice logo for the latter,
 	# tweak some OMV settings
