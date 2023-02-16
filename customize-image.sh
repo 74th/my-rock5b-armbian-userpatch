@@ -38,8 +38,30 @@ Main() {
 	esac
 	install -D -o root -g root -m 644 /tmp/overlay/etc_apt_keyrings/* /etc/apt/keyrings/
 	install -D -o root -g root -m 644 /tmp/overlay/etc_apt_source.list.d/* /etc/apt/sources.list.d/
-	apt-get upgrade -y
-	apt-get update && apt-get install -y code tabby-terminal kodi
+	apt-get update
+	apt dist-upgrade -y
+	apt install -y \
+		mali-g610-firmware \
+		rockchip-multimedia-config \
+		fcitx5-frontend-qt5 \
+		tabby-terminal \
+		code \
+		chromium-browser \
+		fcitx5 \
+		fcitx5-mozc \
+		fcitx5-config-qt \
+		curl \
+		unar \
+		neovim \
+		gh \
+		docker-e \
+		python3 \
+		python3-pip \
+		openssh-server \
+		vim
+
+	cd /root/ && curl -OL https://github.com/pymumu/fan-control-rock5b/releases/download/1.1.0/fan-control-rock5b.1.1.0.arm64.deb && dpkg -i fan-control-rock5b.1.1.0.arm64.deb
+	systemctl enable fan-control
 } # Main
 
 InstallOpenMediaVault() {
