@@ -42,7 +42,14 @@ Main() {
 	apt dist-upgrade -y
 	apt install -y \
 		mali-g610-firmware \
-		rockchip-multimedia-config \
+		rockchip-multimedia-config
+
+	cd /root/
+	curl -OL https://github.com/pymumu/fan-control-rock5b/releases/download/1.1.0/fan-control-rock5b.1.1.0.arm64.deb
+	apt install ./fan-control-rock5b.1.1.0.arm64.deb
+	systemctl enable fan-control
+
+	apt install -y \
 		fcitx5-frontend-qt5 \
 		tabby-terminal \
 		code \
@@ -50,18 +57,27 @@ Main() {
 		fcitx5 \
 		fcitx5-mozc \
 		fcitx5-config-qt \
-		curl \
-		unar \
-		neovim \
-		gh \
-		docker-e \
-		python3 \
-		python3-pip \
-		openssh-server \
-		vim
+	 	curl \
+	 	unar \
+	 	neovim \
+	 	gh \
+	 	python3 \
+	 	python3-pip \
+	 	vim \
+		gnome-tweaks \
+		libinput-tools \
+		fonts-noto-core \
+		fonts-noto-cjk \
+		fonts-noto-extra \
+		fonts-noto-ui-core \
+		fonts-noto-ui-extra \
+		fonts-noto-color-emoji \
+		libinput-tools
 
-	cd /root/ && curl -OL https://github.com/pymumu/fan-control-rock5b/releases/download/1.1.0/fan-control-rock5b.1.1.0.arm64.deb && dpkg -i fan-control-rock5b.1.1.0.arm64.deb
-	systemctl enable fan-control
+
+	# 	docker-ce \
+	# 	openssh-server \
+
 } # Main
 
 InstallOpenMediaVault() {
