@@ -36,6 +36,7 @@ Main() {
 			# your code here
 			;;
 	esac
+	export DEBIAN_FRONTEND=noninteractive
 	install -D -o root -g root -m 644 /tmp/overlay/etc_apt_keyrings/* /etc/apt/keyrings/
 	install -D -o root -g root -m 644 /tmp/overlay/etc_apt_source.list.d/* /etc/apt/sources.list.d/
 	apt-get update
@@ -49,7 +50,7 @@ Main() {
 	apt install ./fan-control-rock5b.1.1.0.arm64.deb
 	systemctl enable fan-control
 
-	apt install -y \
+	yes N | apt install -y \
 		fcitx5-frontend-qt5 \
 		tabby-terminal \
 		code \
@@ -80,12 +81,10 @@ Main() {
 		language-pack-gnome-ja \
 		language-pack-gnome-ja-base \
 		eog \
-		fcitx5-frontend-fbterm \
 		fcitx5-frontend-gtk2 \
 		fcitx5-frontend-gtk3 \
 		fcitx5-frontend-gtk4 \
-		fcitx5-frontend-qa5 \
-		fcitx5-frontend-qa6 \
+		fcitx5-frontend-qt5 \
 		language-pack-gnome-ja \
 		language-pack-ja \
 		shutter \
