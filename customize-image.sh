@@ -63,7 +63,7 @@ Main() {
         gh \
         python3 \
         python3-pip \
-        vim \
+		pipx \
         gnome-tweaks \
         libinput-tools \
         fonts-noto-core \
@@ -72,8 +72,25 @@ Main() {
         fonts-noto-ui-core \
         fonts-noto-ui-extra \
         fonts-noto-color-emoji \
-        
-        libinput-tools
+        fonts-noto-mono \
+        gimp \
+        inkscape \
+        language-pack-ja \
+        language-pack-ja-base \
+        language-pack-gnome-ja \
+        language-pack-gnome-ja-base \
+        eog \
+		fcitx5-frontend-fbterm \
+		fcitx5-frontend-gtk2 \
+		fcitx5-frontend-gtk3 \
+		fcitx5-frontend-gtk4 \
+		fcitx5-frontend-qa5 \
+		fcitx5-frontend-qa6 \
+		language-pack-gnome-ja \
+		language-pack-ja \
+		shutter \
+        vim
+
 
 
     #     docker-ce \
